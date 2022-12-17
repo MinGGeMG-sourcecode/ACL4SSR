@@ -1,0 +1,47 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+external-controller: :9090
+ipv6: true
+allow-lan: true
+mode: direct
+log-level: debug
+
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:8054
+  enhanced-mode: redir-host
+  default-nameserver:
+    - 198.18.0.1
+    - 192.168.10.1
+    - 119.29.29.29
+    - 119.28.28.28
+    - 1.0.0.1
+    - 208.67.222.222
+    - 1.2.4.8
+  nameserver:
+    - 192.168.10.1:8053
+    - https://dns.nextdns.io/dns-query
+    - https://dns-unfiltered.adguard.com/dns-query
+    - https://doh.dns.sb/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+
+tun:
+  enable: true
+  device: meta
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: false
+  auto-detect-interface: true
+  endpoint_independent_nat: true
+
+ebpf:
+  redirect-to-tun:
+    - br0
