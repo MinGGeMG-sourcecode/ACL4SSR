@@ -4,6 +4,7 @@ redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
 external-controller: :9090
+external-ui: folder
 ipv6: true
 allow-lan: true
 mode: direct
@@ -16,14 +17,8 @@ dns:
   enhanced-mode: redir-host
   default-nameserver:
     - 198.18.0.1
-    - 192.168.10.1
-    - 119.29.29.29
-    - 119.28.28.28
-    - 1.0.0.1
-    - 208.67.222.222
-    - 1.2.4.8
+    - [fdfe:dcba:9876::1]
   nameserver:
-    - 192.168.10.1:8053
     - https://dns.nextdns.io/dns-query
     - https://dns-unfiltered.adguard.com/dns-query
     - https://doh.dns.sb/dns-query
@@ -46,6 +41,6 @@ ebpf:
   redirect-to-tun:
     - br0
 
-iptables:
-  enable: true 
-  inbound-interface: br0
+#iptables:
+#  enable: true 
+#  inbound-interface: br0
