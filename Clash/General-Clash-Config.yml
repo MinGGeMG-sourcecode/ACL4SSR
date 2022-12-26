@@ -45,3 +45,7 @@ tun:
 ebpf:
   redirect-to-tun:
     - br0
+
+iptables:
+  enable: true 
+  inbound-interface: br0
