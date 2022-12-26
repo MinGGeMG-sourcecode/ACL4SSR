@@ -4,7 +4,7 @@ redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
 external-controller: :9090
-external-ui: clash_webs
+external-ui: /opt/app/clash/clash_webs
 ipv6: true
 allow-lan: true
 mode: direct
@@ -17,7 +17,7 @@ dns:
   enhanced-mode: redir-host
   default-nameserver:
     - 198.18.0.1
-    - fdfe:dcba:9876::1
+    - 127.0.0.1
   nameserver:
     - https://dns.nextdns.io/dns-query
     - https://dns-unfiltered.adguard.com/dns-query
